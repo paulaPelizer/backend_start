@@ -12,34 +12,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.capgemini.start.api.dto.input.GeneroInputDTO;
 import com.capgemini.start.api.dto.input.TipoInputDTO;
-
+import com.capgemini.start.api.dto.output.GeneroDTO;
 import com.capgemini.start.api.dto.output.TipoDTO;
 
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Tipo", description = "Tipo de título")
-public interface TipoResource {
+@Tag(name = "Genero", description = "Gênero")
+public interface GeneroResource {
 	
-	@Operation(summary = "Consulta um Tipo por id")
+	@Operation(summary = "Consulta um Gênero por id")
 	@GetMapping(value = "/{id}")
-	ResponseEntity<TipoDTO> findById(@PathVariable Long id);
+	ResponseEntity<GeneroDTO> findById(@PathVariable Long id);
 	
-	@Operation(summary = "Lista todos os Tipos")
+	@Operation(summary = "Lista todos os Gêneros")
 	@GetMapping()
-	ResponseEntity<List<TipoDTO>> findAll();
+	ResponseEntity<List<GeneroDTO>> findAll();
 	
-	@Operation(summary = "Insere um Tipo")
+	@Operation(summary = "Insere um Gênero")
 	@PostMapping()
-	ResponseEntity<TipoDTO> insert(@RequestBody @Valid TipoInputDTO tipo);
+	ResponseEntity<GeneroDTO> insert(@RequestBody @Valid GeneroInputDTO genero);
 	
-	@Operation(summary = "Atualiza um Tipo")
+	@Operation(summary = "Atualiza um Genero")
 	@PutMapping(value = "/{id}")
-	ResponseEntity<TipoDTO> update(@PathVariable Long id, @RequestBody @Valid TipoInputDTO tipo);
+	ResponseEntity<GeneroDTO> update(@PathVariable Long id, @RequestBody @Valid GeneroInputDTO tipo);
 	
-	@Operation(summary = "Exclui um Tipo pelo id")
+	@Operation(summary = "Exclui um Gênero pelo id")
 	@DeleteMapping(value = "/{id}")
 	ResponseEntity<Void> delete(@PathVariable Long id);
 

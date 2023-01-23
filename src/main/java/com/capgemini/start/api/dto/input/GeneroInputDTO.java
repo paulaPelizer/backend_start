@@ -1,5 +1,8 @@
 package com.capgemini.start.api.dto.input;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -10,15 +13,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Schema(name = "TipoInput", description = "Objeto de entrada para inclusão e alteração da entidade Tipo")
+@Schema(name = "GeneroInput", description = "Objeto de entrada para inclusão e alteração da entidade Gênero")
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TipoInputDTO {
+public class GeneroInputDTO {
 	
 	@NotNull
 	@Length(max = 100)
 	private String descricao;
 	
+	@NotNull
+	private LocalDateTime data;
 	
 }

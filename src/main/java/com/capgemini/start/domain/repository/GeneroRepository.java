@@ -2,9 +2,10 @@ package com.capgemini.start.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.capgemini.start.domain.entity.Tipo;
+import com.capgemini.start.domain.entity.Genero;
 
-public interface TipoRepository extends JpaRepository<Tipo, Long>{
+
+public interface GeneroRepository extends JpaRepository<Genero, Long>{
 	
 	boolean existsByDescricaoIgnoreCase(String descricao);
 	
