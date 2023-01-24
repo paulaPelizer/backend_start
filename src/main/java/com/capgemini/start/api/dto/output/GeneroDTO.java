@@ -16,7 +16,7 @@ public class GeneroDTO {
 	
 	private Long id;
 	private String descricao;
-	private LocalDateTime data1;
-	private LocalDateTime data2;
+	private LocalDateTime dataCriacao;
+	private LocalDateTime dataAlteracao;
 
 }

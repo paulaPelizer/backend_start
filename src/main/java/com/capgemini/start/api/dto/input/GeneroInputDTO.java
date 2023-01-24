@@ -24,6 +24,6 @@ public class GeneroInputDTO {
 	private String descricao;
 	
 	@NotNull
-	private LocalDateTime data;
+	private LocalDateTime dataCriacao;
 	
 }
