@@ -16,17 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.capgemini.start.api.dto.input.GeneroInputDTO;
-import com.capgemini.start.api.dto.input.TipoInputDTO;
 import com.capgemini.start.api.dto.output.GeneroDTO;
-import com.capgemini.start.api.dto.output.TipoDTO;
 import com.capgemini.start.api.mapper.GeneroMapper;
-import com.capgemini.start.api.mapper.TipoMapper;
 import com.capgemini.start.api.resource.GeneroResource;
-import com.capgemini.start.api.resource.TipoResource;
 import com.capgemini.start.domain.entity.Genero;
-import com.capgemini.start.domain.entity.Tipo;
 import com.capgemini.start.domain.service.GeneroService;
-import com.capgemini.start.domain.service.TipoService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -43,8 +37,8 @@ public class GeneroResourceImpl implements GeneroResource{
 	@Override
 	public ResponseEntity<GeneroDTO> findById(Long id) {
 		Genero genero = this.service.findById(id);
-		GeneroDTO dto = mapper.toDTO(genero);
-		return ResponseEntity.ok(dto);
+		GeneroDTO gto = mapper.toDTO(genero);
+		return ResponseEntity.ok(gto);
 	}
 
 	@Override
